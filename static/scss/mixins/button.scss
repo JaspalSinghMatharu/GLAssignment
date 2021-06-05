@@ -1,0 +1,14 @@
+.btn {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+}
+
+@mixin btn-color($name: 'basic' ,$color: #000, $bgColor: #fff) {
+    .btn-#{$name} {
+        background-color: $bgColor;
+        color: $color;
+    }
+}

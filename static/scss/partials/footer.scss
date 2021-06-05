@@ -1,0 +1,40 @@
+// footer css
+
+.page-footer {
+    height: 65px;
+}
+
+.footer {
+    background: #260591;
+    padding: 12px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: -110%;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+    .page-footer {
+        height: 65px;
+    }
+
+    .footer {
+        padding: 16px;
+    }
+
+    .footer-text {
+        display: block;
+        font-size: 16px;
+        color: #fff;
+        margin-right: 30px;
+    }
+}

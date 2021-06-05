@@ -1,0 +1,42 @@
+.section {
+    padding: 50px 16px;
+    text-align: center;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 16px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 3px solid #196ae5;
+        width: 60%;
+    }
+}
+
+.section-body {
+    padding-top: 20px;
+    text-align: left;
+}
+
+@media only screen and (min-width: 1000px) {
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-body {
+        padding-top: 60px;
+        max-width: 996px;
+        margin: 0 auto;
+    }
+}

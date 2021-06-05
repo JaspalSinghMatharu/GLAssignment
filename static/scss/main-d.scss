@@ -1,0 +1,81 @@
+@media only screen and (min-width: 1000px) {
+    .banner-content-wrapper {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .form-wrapper {
+        width: 360px;
+    }
+
+    .banner-content__title,
+    .banner-content__subtitle {
+        white-space: pre;
+    }
+
+    .banner-content__title {
+        font-size: 36px;
+        line-height: initial;
+    }
+
+    .banner-content__supporting-text {
+        span {
+            display: inline-block;
+            padding-left: 5px;
+            border-left: 2px solid #fff;
+            line-height: 18px;
+        }
+    }
+
+    .video-section {
+        width: 500px;
+        height: 280px;
+        margin: 0 auto;
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .course-features-list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+
+    .course-feature__image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: {
+            position: center;
+            repeat: no-repeat;
+            size: 60px;
+        };
+
+        &.cirriculum {
+            background-image: url("../../assets/curriculum.svg");
+            background-color: #f7d354;
+        }
+
+        &.mentorship {
+            background-image: url("../../assets/mentorship.svg");
+            background-color: #42c5f1;
+        }   
+        &.assistance {
+            background-image: url("../../assets/career-assistance.svg");
+            background-color: #3baa8e;
+        }
+    }
+
+    .course-feature__label {
+        margin-top: 16px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #000;
+    }
+}

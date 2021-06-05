@@ -1,0 +1,49 @@
+.learning-section__title {
+  font-size: 16px;
+}
+
+.learning-section-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.learnings-section__image {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.learnings-list__item {
+  font-size: 16px;
+  padding-left: 22px;
+  margin-top: 20px;
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    display: block;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(-45deg);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+    .learning-section-body {
+        flex-direction: row-reverse;
+        margin-top: 30px;
+    }
+
+    .learnings-section__image {
+        width: 380px;
+        height: 280px;
+    }
+}
