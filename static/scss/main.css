@@ -138,10 +138,11 @@ summary {
 .accordion-body {
   height: 0px;
   transition: height .5s linear;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #efefef; }
 
 .accordion-data {
-  padding: 10px; }
+  padding: 16px; }
 
 .accordion-icon {
   width: 15px;
@@ -217,12 +218,16 @@ summary {
   text-align: center;
   position: fixed;
   width: 100%;
-  bottom: -110%;
+  bottom: 0%;
   left: 0;
   z-index: 2;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: transform .3s linear;
+  transform: translateY(110%); }
+  .footer.active {
+    transform: translateY(0); }
 
 .footer-text {
   display: none; }

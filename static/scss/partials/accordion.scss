@@ -3,8 +3,8 @@
 }
 
 .accordion-list {
-    border: 1px solid #000;
-    background-color: #fff;
+    border: 1px solid map-get($color-map, 'black');
+    background-color: map-get($color-map, 'white');
 }
 
 .accordion-list__item {
@@ -24,7 +24,7 @@
 }
 
 .accordion-head {
-    border-bottom: 1px solid#000;
+    border-bottom: 1px solid map-get($color-map, 'black');
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,10 +40,11 @@
     height: 0px;
     transition: height .5s linear;
     overflow: hidden;
+    background: #efefef;
 }
 
 .accordion-data {
-    padding: 10px;
+    padding: 16px;
 }
 
 .accordion-icon {
@@ -58,7 +59,7 @@
         height: 2px;
         position: absolute;
         display: block;
-        background-color: #000;
+        background-color: map-get($color-map, 'black');
         top: 7px;
         left: 2px;
         transition: transform .3s ease;
@@ -73,7 +74,7 @@
     .accordion-head {
         padding: 20px 40px;
         font-size: 22px;
-        font-weight: 500;
+        font-weight: $font-medium;
     }
 
     .accordion-icon {

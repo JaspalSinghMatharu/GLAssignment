@@ -1,4 +1,5 @@
 // Main css file
+@import "./partials/variables.scss";
 @import "./partials/reset.scss";
 @import "./partials/section.scss";
 @import "./partials/accordion.scss";
@@ -51,7 +52,7 @@
 // form css starts here
 
 .form-wrapper {
-    background: #fff;
+    background: map-get($color-map, 'white');
     padding: 20px 16px 16px;
     border-radius: 8px;
     width: 100%;
@@ -60,12 +61,12 @@
 
 .form-title {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: $font-semibold;
     text-align: center;
     display: inline-block;
     padding-bottom: 10px;
     position: relative;
-    color: #1a1a1a ;
+    color: map-get($color-map, 'black-1');
 
     &:after {
         content: "";
@@ -74,7 +75,7 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        border-top: 2px solid #484848;
+        border-top: 2px solid map-get($color-map, 'charcoal');
         width: 50%;
     }
 }
@@ -100,7 +101,7 @@
 .form-item__input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #aaa;
+    border: 1px solid map-get($color-map, 'grey-light');
     border-radius: 4px;
     font-size: 14px;
 
@@ -117,19 +118,19 @@
 
 .banner-content {
     margin-top: 30px;
-    color: #fff;
+    color: map-get($color-map, 'white');
 }
 
 .banner-content__title {
     line-height: 30px;
-    font-weight: 600;
+    font-weight: $font-semibold;
 }
 
 .banner-content__subtitle {
     font-size: 15px;
     padding: 4px 10px;
-    border-left: 1px solid #fff;
-    font-weight: 500;
+    border-left: 1px solid map-get($color-map, 'white');
+    font-weight: $font-medium;
     margin: {
         top: 16px;
         bottom: 16px;
@@ -138,7 +139,7 @@
 
 .banner-content__supporting-text {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: $font-normal;
 
     span {
         display: block;
@@ -147,13 +148,13 @@
 
 
 .curriculum-section {
-    background-color: #ecf4ff;
+    background-color: map-get($color-map, 'persian-blue');
 }
 
 // info section css
 .info-section {
-    background-color: #f4f4f4;
-    border-top: 1px solid #aaa; 
+    background-color: map-get($color-map, 'snow');;
+    border-top: 1px solid map-get($color-map, 'grey-light');
 
 
     .section-body {

@@ -5,17 +5,23 @@
 }
 
 .footer {
-    background: #260591;
+    background: map-get($color-map, 'royal-blue');
     padding: 12px;
     text-align: center;
     position: fixed;
     width: 100%;
-    bottom: -110%;
+    bottom: 0%;
     left: 0;
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .3s linear;
+    transform: translateY(110%);
+
+    &.active {
+        transform: translateY(0);
+    }
 }
 
 .footer-text {
@@ -34,7 +40,7 @@
     .footer-text {
         display: block;
         font-size: 16px;
-        color: #fff;
+        color: map-get($color-map, 'white');
         margin-right: 30px;
     }
 }

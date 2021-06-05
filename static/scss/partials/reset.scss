@@ -7,8 +7,8 @@ html {
   }
   body {
     font-size: 13px;
-    color: #000;
-    background: #fff;
+    color: map-get($color-map, 'black');
+    background: map-get($color-map, 'white');
     font-style: normal;
     -webkit-overflow-scrolling: touch;
   }
