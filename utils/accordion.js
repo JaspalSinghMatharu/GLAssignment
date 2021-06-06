@@ -3,7 +3,7 @@ var Accordion = (function() {
 
     function _setSelector(selector) {
         accordion = document.querySelector(selector);
-        accordionHead = accordion.querySelectorAll('.accordion-list__item');
+        accordionHead = accordion.querySelectorAll('.accordion-head');
     }
 
     function resetActiveItem() {
@@ -18,17 +18,18 @@ var Accordion = (function() {
     function handleAccordionClick() {
         for(var i=0; i < accordionHead.length; i++) {
             accordionHead[i].addEventListener('click', function() {
-                var isOpen = this.classList.contains('active');
-                var accordionBody = this.querySelector('.accordion-body');
+                var accordionItem = this.closest('.accordion-list__item');
+                var isOpen = accordionItem.classList.contains('active');
+                var accordionBody = accordionItem.querySelector('.accordion-body');
                 if(!isOpen) {
                     resetActiveItem();
                     var scrollHeight = accordionBody.scrollHeight;
                     accordionBody.style.height = scrollHeight + 'px';
-                    this.classList.add('active');
+                    accordionItem.classList.add('active');
                 }
                 else {
                     accordionBody.style.height = 0;
-                    this.classList.remove('active');
+                    accordionItem.classList.remove('active');
                 }
             })
         }

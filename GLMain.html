@@ -44,24 +44,28 @@
                   type="text"
                   id="name"
                   class="form-item__input"
+                  required
                 />
               </div>
               <div class="form-item">
                 <label for="email" class="form-item__label"></label>
                 <input
                   placeholder="Email"
-                  type="text"
+                  type="email"
                   id="email"
                   class="form-item__input"
+                  required
                 />
               </div>
               <div class="form-item">
                 <label for="mobileno" class="form-item__label"></label>
                 <input
                   placeholder="Mobile No."
-                  type="text"
+                  type="number"
                   id="mobileno"
                   class="form-item__input"
+                  required
+                  minlength="10"
                 />
               </div>
               <div class="form-item">
@@ -71,11 +75,12 @@
                   type="text"
                   id="workexperience"
                   class="form-item__input"
+                  required
                 />
               </div>
               <div class="form-item">
                 <label for="organization" class="form-item__label"></label>
-                <select class="form-item__input form-item--select">
+                <select id="organization" class="form-item__input form-item--select">
                   <option value="-1">Current Organization</option>
                   <option value="0">1</option>
                   <option value="1">2</option>
@@ -86,13 +91,13 @@
               <div class="form-item">
                 <label for="authorizeCheckBox">
                   <div class="form-item__custom-wrapper">
-                    <input type="checkbox" id="authorizeCheckBox" />
+                    <input class="form-item__check-input" type="checkbox" id="authorizeCheckBox" />
                     <p>I authorize a Great Learning representative to contact me.</p>
                   </div>
                 </label>
               </div>
               <div class="from-action-item">
-                  <input class="btn btn-primary" type="button" value="Apply Now" />
+                  <input class="btn btn-primary js-submit-btn" type="button" value="Apply Now" />
               </div>
             </form>
           </div>
@@ -230,7 +235,49 @@ cource and power ahead in your career</h2>
     <section class="section">
         <h3 class="section-title">Testimonials</h3>
         <div class="section-body">
-            
+            <div class="carousel-wrapper js-carousel">
+                <ul class="carousel">
+                    <li class="carousel-item">
+                        <span>"</span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<span>"</span>
+                        <p class="testimonial-byline">
+                            - Senior Director, Business Development (Software Industry)
+                        </p>
+
+                    </li>
+                    <li class="carousel-item">
+                        <span>"</span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<span>"</span>
+                        <p class="testimonial-byline">
+                            - Senior Director, Business Development (Software Industry)
+                        </p>
+                    </li>
+                    <li class="carousel-item">
+                        <span>"</span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<span>"</span>
+                        <p class="testimonial-byline">
+                            - Senior Director, Business Development (Software Industry)
+                        </p>
+                    </li>
+                    <li class="carousel-item">
+                        <span>"</span>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<span>"</span>
+                        <p class="testimonial-byline">
+                            - Senior Director, Business Development (Software Industry)
+                        </p>
+                    </li>
+                </ul>
+                <div class="carousel-prev-btn carousel-nav"></div>
+                <div class="carousel-next-btn carousel-nav"></div>
+                <div class="pagination-wrapper">
+                    <ul class="pagination-list">
+                        <li class="pagination-item active"></li>
+                        <li class="pagination-item"></li>
+                        <li class="pagination-item"></li>
+                        <li class="pagination-item"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -248,5 +295,7 @@ cource and power ahead in your career</h2>
     <script src="./utils/scrollTo.js"></script>
     <script src="./utils/accordion.js"></script>
     <script src="./static/js/app.js"></script>
+    <script src="./static/js/form-validation.js"></script>
+    <script src="./utils/carousel.js"></script>
   </body>
 </html>

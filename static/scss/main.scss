@@ -6,6 +6,7 @@
 @import "./partials/learnings-section.scss";
 @import "./partials/footer.scss";
 @import "../scss/mixins/button.scss";
+@import "../scss/partials/carousel.scss";
 
 @include btn-color('primary', #fff, #196ae5);
 @include btn-color('secondary', #260591, #fff);
@@ -101,7 +102,7 @@
 .form-item__input {
     width: 100%;
     padding: 10px;
-    border: 1px solid map-get($color-map, 'grey-light');
+    border: 1px solid map-get($color-map, 'grey-light');    
     border-radius: 4px;
     font-size: 14px;
 
@@ -111,6 +112,16 @@
 
     &.form-item--select {
         padding: 9px 7px;
+    }
+
+    &.invalid {
+        border-color: red;
+    }
+}
+
+.form-item__check-input {
+    &.invalid {
+        outline: 1px solid red;
     }
 }
 
@@ -162,6 +173,13 @@
         font-size: 16px;
         text-align: center;
     }
+}
+
+// testimonial section css
+
+.testimonial-byline {
+    font-weight: $font-semibold;
+    margin-top: 12px;
 }
 
 @media only screen and (max-width: 768px) {
