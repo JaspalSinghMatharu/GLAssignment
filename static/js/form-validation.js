@@ -82,7 +82,7 @@ var ValidateForm = (function() {
                     break;
 
                 case 'select':
-                    isValid = inputValue > -1;
+                    isValid = inputValue != -1;
                     break;
 
                 case "checkbox":

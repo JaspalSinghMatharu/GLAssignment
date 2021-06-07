@@ -416,7 +416,8 @@ summary {
     outline: none; }
   .form-item__input.form-item--select {
     padding: 9px 7px;
-    -webkit-appearance: none; }
+    -webkit-appearance: none;
+    background: #fff; }
   .form-item__input.invalid {
     border-color: red; }
 

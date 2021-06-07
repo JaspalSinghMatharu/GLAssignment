@@ -129,7 +129,7 @@
   &.form-item--select {
     padding: 9px 7px;
     -webkit-appearance: none;
-    background: map-get($color-map, white);
+    background: map-get($color-map, "white");
   }
 
   &.invalid {
