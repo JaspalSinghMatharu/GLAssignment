@@ -115,13 +115,3 @@ var ValidateForm = (function() {
     }
 
 })();
-
-window.addEventListener('load', function() {
-    ValidateForm.setFormData(formData);
-    var formSubmitButton = document.querySelector('.js-submit-btn');
-    if(formSubmitButton) {
-        formSubmitButton.addEventListener('click', function() {
-            ValidateForm.registerEvents(formData);
-        })
-    }
-})

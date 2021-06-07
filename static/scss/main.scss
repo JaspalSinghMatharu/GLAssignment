@@ -8,8 +8,8 @@
 @import "../scss/mixins/button.scss";
 @import "../scss/partials/carousel.scss";
 
-@include btn-color('primary', #fff, #196ae5);
-@include btn-color('secondary', #260591, #fff);
+@include btn-color("primary", #fff, #196ae5);
+@include btn-color("secondary", #260591, #fff);
 
 .banner-container {
   background: {
@@ -45,159 +45,175 @@
 }
 
 .banner-content-wrapper {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 // form css starts here
 
 .form-wrapper {
-    background: map-get($color-map, 'white');
-    padding: 20px 16px 16px;
-    border-radius: 8px;
-    width: 100%;
-    text-align: center;
+  background: map-get($color-map, "white");
+  padding: 20px 16px 16px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 .form-title {
-    font-size: 22px;
-    font-weight: $font-semibold;
-    text-align: center;
-    display: inline-block;
-    padding-bottom: 10px;
-    position: relative;
-    color: map-get($color-map, 'black-1');
+  font-size: 22px;
+  font-weight: $font-semibold;
+  text-align: center;
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+  color: map-get($color-map, "black-1");
 
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        border-top: 2px solid map-get($color-map, 'charcoal');
-        width: 50%;
-    }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 2px solid map-get($color-map, "charcoal");
+    width: 50%;
+  }
 }
 
 .form {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .form-item {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 
-    &__custom-wrapper {
-        display: flex;
-        align-items: baseline;
-        text-align: left;
+  &__custom-wrapper {
+    display: flex;
+    align-items: baseline;
+    text-align: left;
 
-        p {
-            margin-left: 10px;
-        }
+    p {
+      margin-left: 10px;
     }
+  }
+
+  &.form-select {
+      position: relative;
+      &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          right: 12px;
+          top: 16px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid map-get($color-map , 'charcoal');
+      }
+  }
 }
 
 .form-item__input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid map-get($color-map, 'grey-light');    
-    border-radius: 4px;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid map-get($color-map, "grey-light");
+  border-radius: 4px;
+  font-size: 14px;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    &.form-item--select {
-        padding: 9px 7px;
-    }
+  &.form-item--select {
+    padding: 9px 7px;
+    -webkit-appearance: none;
+    background: map-get($color-map, white);
+  }
 
-    &.invalid {
-        border-color: red;
-    }
+  &.invalid {
+    border-color: red;
+  }
 }
 
 .form-item__check-input {
-    &.invalid {
-        outline: 1px solid red;
-    }
+  &.invalid {
+    outline: 1px solid red;
+  }
 }
 
 // Banner content css
 
 .banner-content {
-    margin-top: 30px;
-    color: map-get($color-map, 'white');
+  margin-top: 30px;
+  color: map-get($color-map, "white");
 }
 
 .banner-content__title {
-    line-height: 30px;
-    font-weight: $font-semibold;
+  line-height: 30px;
+  font-weight: $font-semibold;
 }
 
 .banner-content__subtitle {
-    font-size: 15px;
-    padding: 4px 10px;
-    border-left: 1px solid map-get($color-map, 'white');
-    font-weight: $font-medium;
-    margin: {
-        top: 16px;
-        bottom: 16px;
-    };
+  font-size: 15px;
+  padding: 4px 10px;
+  border-left: 1px solid map-get($color-map, "white");
+  font-weight: $font-medium;
+  margin: {
+    top: 16px;
+    bottom: 16px;
+  }
 }
 
 .banner-content__supporting-text {
-    font-size: 18px;
-    font-weight: $font-normal;
+  font-size: 18px;
+  font-weight: $font-normal;
 
-    span {
-        display: block;
-    }
+  span {
+    display: block;
+  }
 }
 
-
 .curriculum-section {
-    background-color: map-get($color-map, 'persian-blue');
+  background-color: map-get($color-map, "persian-blue");
 }
 
 // info section css
 .info-section {
-    background-color: map-get($color-map, 'snow');;
-    border-top: 1px solid map-get($color-map, 'grey-light');
+  background-color: map-get($color-map, "snow");
+  border-top: 1px solid map-get($color-map, "grey-light");
 
-
-    .section-body {
-        padding-top: 0;
-        font-size: 16px;
-        text-align: center;
-    }
+  .section-body {
+    padding-top: 0;
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 // testimonial section css
 
 .testimonial-byline {
-    font-weight: $font-semibold;
-    margin-top: 12px;
+  font-weight: $font-semibold;
+  margin-top: 12px;
 }
 
 @media only screen and (max-width: 768px) {
-    .video-section {
-        position: relative;
-        padding-top: 56.25%;
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+  .video-section {
+    position: relative;
+    padding-top: 56.25%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
+  }
 
-    .course-features-list {
-        display: none;
-    }
+  .course-features-list {
+    display: none;
+  }
 }
 
-@import './main-d.scss';
+@import "./main-d.scss";

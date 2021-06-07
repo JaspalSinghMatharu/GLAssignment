@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
     .banner-content-wrapper {
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -9,11 +9,7 @@
 
     .form-wrapper {
         width: 360px;
-    }
-
-    .banner-content__title,
-    .banner-content__subtitle {
-        white-space: pre;
+        flex-shrink: 0;
     }
 
     .banner-content__title {

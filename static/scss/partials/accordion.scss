@@ -45,6 +45,7 @@
 
 .accordion-data {
     padding: 16px;
+    font-size: 16px;
 }
 
 .accordion-icon {
@@ -70,7 +71,7 @@
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
     .accordion-head {
         padding: 20px 40px;
         font-size: 22px;

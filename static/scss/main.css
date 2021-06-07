@@ -105,7 +105,7 @@ summary {
   padding-top: 20px;
   text-align: left; }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .section-title {
     font-size: 32px; }
 
@@ -142,7 +142,8 @@ summary {
   background: #efefef; }
 
 .accordion-data {
-  padding: 16px; }
+  padding: 16px;
+  font-size: 16px; }
 
 .accordion-icon {
   width: 15px;
@@ -161,7 +162,7 @@ summary {
   .accordion-icon:before {
     transform: rotate(-90deg); }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .accordion-head {
     padding: 20px 40px;
     font-size: 22px;
@@ -201,7 +202,7 @@ summary {
     border-bottom: 2px solid #000;
     transform: rotate(-45deg); }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .learning-section-body {
     flex-direction: row-reverse;
     margin-top: 30px; }
@@ -232,7 +233,7 @@ summary {
 .footer-text {
   display: none; }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .page-footer {
     height: 73px; }
 
@@ -252,13 +253,15 @@ summary {
   border-radius: 4px; }
 
 .carousel-wrapper {
-  overflow: hidden;
   position: relative; }
+
+.carousel-container {
+  overflow: hidden; }
 
 .carousel {
   display: flex;
   width: 100%;
-  transition: transform .2s linear; }
+  transition: transform 0.2s linear; }
 
 .carousel-item {
   flex-shrink: 0;
@@ -283,24 +286,39 @@ summary {
     background-color: #196ae5; }
 
 .carousel-nav {
-  width: 20px;
-  height: 20px;
+  width: 47px;
+  height: 99px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: red;
   display: none; }
   .carousel-nav.carousel-prev-btn {
-    left: 0; }
+    background: url("../../../assets/arrow.png") no-repeat center;
+    left: -70px; }
   .carousel-nav.carousel-next-btn {
-    right: 0; }
+    background: url("../../../assets/arrow.png") no-repeat center;
+    right: -70px;
+    transform: translateY(-50%) rotate(180deg); }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .pagination-list {
     display: none; }
 
   .carousel-nav {
-    display: block; } }
+    display: block; }
+
+  .carousel-item {
+    font-size: 22px;
+    line-height: 40px; }
+    .carousel-item span {
+      font-size: 60px;
+      line-height: 25px;
+      position: relative;
+      top: 10px; }
+
+  .testimonial-byline {
+    text-align: right; } }
 .btn-primary {
   background-color: #196ae5;
   color: #fff; }
@@ -374,6 +392,19 @@ summary {
     text-align: left; }
     .form-item__custom-wrapper p {
       margin-left: 10px; }
+  .form-item.form-select {
+    position: relative; }
+    .form-item.form-select:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      right: 12px;
+      top: 16px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #484848; }
 
 .form-item__input {
   width: 100%;
@@ -384,7 +415,8 @@ summary {
   .form-item__input:focus {
     outline: none; }
   .form-item__input.form-item--select {
-    padding: 9px 7px; }
+    padding: 9px 7px;
+    -webkit-appearance: none; }
   .form-item__input.invalid {
     border-color: red; }
 
@@ -441,7 +473,7 @@ summary {
 
   .course-features-list {
     display: none; } }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
   .banner-content-wrapper {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -450,11 +482,8 @@ summary {
     margin: 0 auto; }
 
   .form-wrapper {
-    width: 360px; }
-
-  .banner-content__title,
-  .banner-content__subtitle {
-    white-space: pre; }
+    width: 360px;
+    flex-shrink: 0; }
 
   .banner-content__title {
     font-size: 36px;

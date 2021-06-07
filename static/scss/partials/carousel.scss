@@ -1,66 +1,86 @@
-
 .carousel-wrapper {
-    overflow: hidden;
-    position: relative;
+  position: relative;
+}
+
+.carousel-container {
+  overflow: hidden;
 }
 .carousel {
-    display: flex;
-    width: 100%;
-    transition: transform .2s linear;
+  display: flex;
+  width: 100%;
+  transition: transform 0.2s linear;
 }
 
 .carousel-item {
-    flex-shrink: 0;
-    width: 100%;
-    font-size: 16px;
+  flex-shrink: 0;
+  width: 100%;
+  font-size: 16px;
 }
 
 .pagination-wrapper {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .pagination-list {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination-item {
-    width: 14px;
-    height: 14px;
-    background-color: map-get($color-map, 'grey-light');
-    border-radius: 50%;
-    margin: 0 8px;
-    
-    &.active {
-        background-color: map-get($color-map , 'blue' );
-    }
+  width: 14px;
+  height: 14px;
+  background-color: map-get($color-map, "grey-light");
+  border-radius: 50%;
+  margin: 0 8px;
+
+  &.active {
+    background-color: map-get($color-map, "blue");
+  }
 }
 
 .carousel-nav {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: red;
-    display: none;
+  width: 47px;
+  height: 99px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: red;
+  display: none;
 
-    &.carousel-prev-btn {
-        left: 0;
-    }
+  &.carousel-prev-btn {
+    background: url("../../../assets/arrow.png") no-repeat center;
+    left: -70px;
+  }
 
-    &.carousel-next-btn {
-        right: 0;
-    }
+  &.carousel-next-btn {
+    background: url("../../../assets/arrow.png") no-repeat center;
+    right: -70px;
+    transform: translateY(-50%) rotate(180deg);
+  }
 }
 
-@media only screen and (min-width: 1000px) {
-    .pagination-list {
-        display: none;
-    }
+@media only screen and (min-width: 768px) {
+  .pagination-list {
+    display: none;
+  }
 
-    .carousel-nav {
-        display: block;
+  .carousel-nav {
+    display: block;
+  }
+
+  .carousel-item {
+    font-size: 22px;
+    line-height: 40px;
+
+    span {
+      font-size: 60px;
+      line-height: 25px;
+      position: relative;
+      top: 10px;
     }
+  }
+  .testimonial-byline {
+      text-align: right;
+  }
 }
