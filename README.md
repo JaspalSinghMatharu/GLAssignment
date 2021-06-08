@@ -2,7 +2,7 @@
 
 ### To Check the code in action
 
-```sh
+```
 clone the repo and open index.html
 
 or
