@@ -41,7 +41,6 @@ var ValidateForm = (function() {
 
         if(Object.keys(localStorageData).length >= data.length) {
             localStorage.setItem('formData', JSON.stringify(localStorageData));
-            console.log(localStorageData)
         }
     }
 
@@ -78,7 +77,7 @@ var ValidateForm = (function() {
                     break;
 
                 case 'email': 
-                    isValid =  textRegex.test(inputValue);
+                    isValid =  emailRegex.test(inputValue);
                     break;
 
                 case 'select':
