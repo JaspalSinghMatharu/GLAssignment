@@ -16,10 +16,10 @@ jobs:
 
       - name: Check for nonce attribute in script tags
         run: |
-          grep -o -E "<script[^>]*?>(.*?)</script>" *.html | grep -v "nonce=" > script_tags_without_nonce.txt
+          grep -o -E "<script[^>]*?>(.*?)</script>" *.html* | grep -v "nonce=" > script_tags_without_nonce.txt
 
       - name: Comment on pull request if script tags without nonce attribute are found
-        if: ${{ steps.check-for-nonce-attribute.outcome == 'success' }}
+        if: ${{ steps.check-for-nonce-attribute-in-script-tags.outcome == 'success' }}
         uses: actions/github-script@v6
         with:
           script: >
