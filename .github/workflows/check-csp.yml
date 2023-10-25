@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install grep
-        if: ${{ ! command -v grep }}
         run: sudo apt-get install grep
 
       - uses: actions/checkout@v3
