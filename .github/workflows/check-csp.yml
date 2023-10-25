@@ -28,7 +28,6 @@ jobs:
         with:
           script: >
               github.issues.createComment({
-                issue_number: ${{ github.event.issue.number }}
-                body: 'Please add a nonce attribute to the following script tags:
-                $(cat script_tags_without_nonce.txt)'
+                issue_number: ${{ github.event.issue.number }},
+                body: 'Please add a nonce attribute to the following script tags: $(cat script_tags_without_nonce.txt)'
               })
