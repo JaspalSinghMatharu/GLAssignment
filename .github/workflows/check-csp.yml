@@ -1,0 +1,29 @@
+name: check-csp-errors
+on:
+  pull_request:
+    branches:
+      - main
+    path:
+      - '**.html'
+jobs:
+  check-nonce-in-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for nonce attribute in script tags
+        run: |
+          grep -o "<script.?>.?</script>" '*.html' | grep -v "nonce=" > script_tags_without_nonce.txt
+
+      - name: Comment on pull request if script tags without nonce attribute are found
+        if: ${{ steps.check-for-nonce-attribute.outcome == 'success' }}
+        uses: actions/github-script@v6
+        with:
+          script: >
+            if [ -s script_tags_without_nonce.txt ]; then
+              github.issues.createComment({
+                issue_number: ${{ github.event.issue.number }},
+                body: 'Please add a nonce attribute to the following script tags:
+                $(cat script_tags_without_nonce.txt)'
+              })
+            fi
