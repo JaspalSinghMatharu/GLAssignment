@@ -13,7 +13,6 @@ jobs:
         run: sudo apt-get install grep
 
       - uses: actions/checkout@v3
-      - uses: actions/github-script@v6
 
 
       - name: Check for nonce attribute in script tags
@@ -26,6 +25,7 @@ jobs:
           echo "Please add a nonce attribute to the following script tags:" "$body"
 
       - name: Comment on pull request if script tags without nonce attribute are found
+        uses: actions/github-script@v6
         with:
           script: |
             github.rest.issues.createComment({
