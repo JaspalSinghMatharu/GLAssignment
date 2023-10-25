@@ -9,11 +9,15 @@ jobs:
   check-nonce-in-script:
     runs-on: ubuntu-latest
     steps:
+      - name: Install grep
+        if: ${{ ! command -v grep }}
+        run: sudo apt-get install grep
+
       - uses: actions/checkout@v3
 
       - name: Check for nonce attribute in script tags
         run: |
-          grep -o "<script.?>.?</script>" 'index.html' | grep -v "nonce=" > script_tags_without_nonce.txt
+          grep -o "<script.?>.?</script>" index.html | grep -v "nonce=" > script_tags_without_nonce.txt
 
       - name: Comment on pull request if script tags without nonce attribute are found
         if: ${{ steps.check-for-nonce-attribute.outcome == 'success' }}
