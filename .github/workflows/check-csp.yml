@@ -4,31 +4,34 @@ on:
     branches:
       - main
     path:
-      - 'index.html'
+      - '*.html'
 jobs:
   check-nonce-in-script:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v6
       - name: Install grep
-        if: ${{ ! command -v grep }}
         run: sudo apt-get install grep
 
       - uses: actions/checkout@v3
 
+
       - name: Check for nonce attribute in script tags
         run: |
-          grep -o "<script.?>.?</script>" index.html | grep -v "nonce=" > script_tags_without_nonce.txt
+          grep -o -E "<script[^>]*?>(.*?)</script>" *.html* | grep -v "nonce=" > script_tags_without_nonce.txt
+
+      - name: Check if file exits
+        run: |
+          body=$(cat script_tags_without_nonce.txt)
+          echo "Please add a nonce attribute to the following script tags:" "$body"
 
       - name: Comment on pull request if script tags without nonce attribute are found
-        if: ${{ steps.check-for-nonce-attribute.outcome == 'success' }}
+        if: success()
         uses: actions/github-script@v6
         with:
-          script: >
-            if [ -s script_tags_without_nonce.txt ]; then
-              github.issues.createComment({
-                issue_number: ${{ github.event.issue.number }},
-                body: 'Please add a nonce attribute to the following script tags:
-                $(cat script_tags_without_nonce.txt)'
-              })
-            fi
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
