@@ -18,6 +18,11 @@ jobs:
         run: |
           grep -o -E "<script[^>]*?>(.*?)</script>" *.html* | grep -v "nonce=" > script_tags_without_nonce.txt
 
+      - name: Comment on PR
+        run: |
+          body=$(cat script_tags_without_nonce.txt)
+          echo "Please add a nonce attribute to the following script tags:" "$body"
+
       # - name: Comment on pull request if script tags without nonce attribute are found
       #   uses: actions/github-script@v6
       #   with:
@@ -29,18 +34,3 @@ jobs:
       #           $(cat script_tags_without_nonce.txt)'
       #         })
       #       fi
-
-      - name: Check if the file exists
-      run: |
-        if [ -s script_tags_without_nonce.txt ]; then
-          echo "File exists and is not empty"
-        fi
-
-      - name: Create Comment
-      if: failure() # Only create the comment if the previous step fails (file exists and is not empty)
-      run: |
-        body=$(cat script_tags_without_nonce.txt)
-        echo "Please add a nonce attribute to the following script tags:" "$body"
-        # Use GitHub API to create a comment on the issue
-        # You'll need to set up appropriate GitHub token and issue number in your secrets
-        # Example: https://github.com/actions/create-issue-comment
